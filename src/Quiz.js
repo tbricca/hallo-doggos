@@ -22,9 +22,9 @@ class Quiz extends Component {
     });
   }
 
-  handleSubmit(event) {
-    alert('Your favorite flavor is: ' + this.state.value);
-    event.preventDefault();
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log('submitted');
   }
   render() {
     return (
@@ -40,7 +40,7 @@ class Quiz extends Component {
           onChange={this.handleOptionChange} />
         </label>
         </div>
-        <div className="Q1"> Question 1:
+        <div className="Q1"> dog name: {this.state.name}
           <div className="radio">
             <label>
               <input
@@ -114,6 +114,7 @@ class Quiz extends Component {
           </label>
       </div>
     </div>
+    <button onClick={(e) => this.handleSubmit(e)}>Submit</button>
     </form>
       </div>
     );
