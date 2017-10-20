@@ -20,10 +20,16 @@ class App extends Component {
       imageResult: ''
     }
   this.transferResult = this.transferResult.bind(this)
+  this.transferFinalResult = this.transferFinalResult.bind(this)
   }
   transferResult(newResult){
     this.setState({
       quizResult: newResult
+    })
+  }
+  transferFinalResult(newResult){
+    this.setState({
+      imageResult: newResult
     })
   }
   render(){
@@ -42,7 +48,7 @@ class App extends Component {
           </nav>
           <Switch>
            <Route exact path="/" render={() => <Quiz transferResult={this.transferResult}/>} />
-           <Route path="/result" render={() => <Result quizResult={this.state.quizResult}/>}/>
+           <Route path="/result" render={() => <Result transferFinalResult={this.transferFinalResult} quizResult={this.state.quizResult}/>}/>
            <Route path="/confirmation" render={() => <Confirmation imageResult={this.state.imageResult}/>}/>
            <Route component={NotFound} />
          </Switch>
