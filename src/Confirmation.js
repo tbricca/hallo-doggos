@@ -59,11 +59,11 @@ class Confirmation extends Component {
           <h1 className="col-md-12"> Checkout </h1>
         </div>
         <div className="row">
-          <div className="col-md-2"></div>
-          <div className="col-md-8">
+
+          <div className="col-md-12">
             <img className="img-responsive" src="/breadcrumb.png" alt=""/>
           </div>
-          <div className="col-md-2"></div>
+  
         </div>
         <div className="row checkout d-flex align-items-center h100">
           <div className="col-md-1">

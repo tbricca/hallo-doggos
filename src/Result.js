@@ -216,7 +216,7 @@ class Result extends Component {
       return (
         <div className="result container-fluid">
         <div className="row">
-          <h1 className="col-md-12 text-center resultDog">{this.props.dogName} {this.state.personalityResult} </h1>
+          <h1 className="col-md-12 text-center resultDog">{this.props.dogName}'s {this.state.personalityResult} </h1>
         </div>
         <div className="row">
           <h2 className="col-md-12 winnerTitle"> {title} </h2>
