@@ -37,15 +37,31 @@ class Result extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            winner:''
+            winner:'',
+            redo: false,
+            buy: false
         }
+        this.handleRedo = this.handleRedo.bind(this);
+        this.handleBuy = this.handleBuy.bind(this);
     }
-    handleSend(winnerObject) {
-      let newResult = winnerObject;
+    handleRedo(e){
+      e.preventDefault()
+      let newResult = this.state.winner;
       this.props.transferFinalResult(newResult)
+      this.redoWinner();
+      this.setState({
+        redo:true
+      })
     }
-
-    render() {
+    handleBuy(e){
+      e.preventDefault()
+      let newResult = this.state.winner;
+      this.props.transferFinalResult(newResult)
+      this.setState({
+        buy:true
+      })
+    }
+    componentDidMount() {
       let quizResult = this.props.quizResult;
       let randomWinner =  Math.floor(Math.random() * (2 - 0 + 1)) + 0;
       let winnerObject = '';
@@ -62,15 +78,45 @@ class Result extends Component {
       }else{
         winnerObject = all[randomWinner]
       }
+      this.setState({
+        winner:winnerObject
+      })
+    }
+    redoWinner() {
+      let quizResult = this.props.quizResult;
+      let randomWinner =  Math.floor(Math.random() * (2 - 0 + 1)) + 0;
+      let winnerObject = '';
+      if(quizResult === "one"){
+        winnerObject = one[randomWinner]
+      }else if(quizResult === "two"){
+        winnerObject = two[randomWinner]
+      }else if(quizResult === "three"){
+        winnerObject = three[randomWinner]
+      }else if(quizResult === "four"){
+        winnerObject = four[randomWinner]
+      }else if(quizResult === "five"){
+        winnerObject = five[randomWinner]
+      }else{
+        winnerObject = all[randomWinner]
+      }
+      this.setState({
+        winner:winnerObject
+      })
+    }
 
+    render() {
+      const{buy} = this.state;
+        if(buy){
+          return <Redirect to ='/confirmation'/>
+        }
       return (
         <div className="App">
-          <img alt="winner" src={winnerObject.url} />
-          <h1> {winnerObject.title} </h1>
-          <p> {winnerObject.cost} </p>
-          <p> {winnerObject.desc} </p>
-          <button>Redo</button>
-          <button>Buy it</button>
+        <img alt="winner" src={this.state.winner.url} />
+        <h1> {this.state.winner.title} </h1>
+        <p> {this.state.winner.cost} </p>
+        <p> {this.state.winner.desc} </p>
+        <button onClick={(e) => this.handleRedo(e)}>Redo</button>
+        <button onClick={(e) => this.handleBuy(e)}>Buy it</button>
         </div>
       );
     }
