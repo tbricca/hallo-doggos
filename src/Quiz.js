@@ -48,6 +48,8 @@ class Quiz extends Component {
     }
     return (
       <div className="App">
+      <h1> Hallo Doggo </h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas luctus felis purus, quis blandit augue ornare et. Maecenas iaculis metus rhoncus nibh blandit, non ultrices diam posuere. Quisque at tellus quis sem tristique interdum. Sed non felis quam. Cras eu felis eros. Suspendisse a vestibulum lectus.</p>
       <form onSubmit={this.handleSubmit}>
         <div className="name">
         <label>

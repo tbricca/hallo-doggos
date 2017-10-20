@@ -27,12 +27,17 @@ class App extends Component {
   }
   render(){
     return (
-      <Router>
+    <Router>
       <div className="App">
-          <nav>
-            <Link to="/result">Result</Link>
-            <Link to="/checkout">Checkout (shopping cart icon)</Link>
-
+          <nav className="navbar navbar-default">
+            <div className="container-fluid">
+              <div className="navbar-header">
+                <a class="navbar-brand" href="#">HalloDoggo</a>
+              </div>
+                <ul className="nav navbar-nav navbar-right">
+                  <li className="navList"><Link to="/confirmation"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></Link></li>
+                </ul>
+            </div>
           </nav>
           <Switch>
            <Route exact path="/" render={() => <Quiz transferResult={this.transferResult}/>} />
@@ -41,7 +46,7 @@ class App extends Component {
            <Route component={NotFound} />
          </Switch>
       </div>
-      </Router>
+    </Router>
     );
   }
 }
