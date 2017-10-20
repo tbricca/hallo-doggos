@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter as Route, Redirect } from 'react-router-dom';
 
 class Confirmation extends Component {
   constructor(props){
     super(props)
     this.state = {
-        quantity: this.props.quantity
+        quantity: this.props.quantity,
+        back:false
     }
     const imageObject = this.props.imageResult
   }
@@ -29,6 +31,12 @@ class Confirmation extends Component {
         quantity: amount
       })
   }
+  back(e){
+    e.preventDefault()
+    this.setState({
+      back:true
+    })
+  }
   render() {
     let src = '';
     if(this.props.imageResult === ''){
@@ -41,7 +49,10 @@ class Confirmation extends Component {
     let total = price + tax +10;
     let title = this.props.imageResult.title
     let amount = this.state.quantity
-
+    const{back} = this.state;
+    if(back){
+      return <Redirect to ='/result'/>
+    }
     return (
       <div className="container-fluid">
         <div className="row">
@@ -79,7 +90,7 @@ class Confirmation extends Component {
             </div>
           </div>
           <div className="col-md-3 text-right">
-            {amount}.00
+            {amount}
           </div>
           <div className="col-md-1"><i className="fa fa-times fa-2x" aria-hidden="true"></i></div>
           <div className="col-md-2"></div>
@@ -93,7 +104,7 @@ class Confirmation extends Component {
             <h5>Total: </h5>
           </div>
           <div className="col-md-2">
-            <p> {price}.00 </p>
+            <p> {price} </p>
             <p>{tax} </p>
             <p> 10.00 </p>
             <h5>{total} </h5>
@@ -101,7 +112,7 @@ class Confirmation extends Component {
           </div>
           <div className="row">
           <div className="col-md-3">
-            <button className="confButton"> Back</button>
+            <button onClick={(e) => this.back(e)} className="confButton"> Back</button>
           </div>
           <div className="col-md-5"></div>
           <div className="col-md-4">
