@@ -16,7 +16,8 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state={
-      quizResult: ''
+      quizResult: '',
+      imageResult: ''
     }
   this.transferResult = this.transferResult.bind(this)
   }
@@ -32,17 +33,17 @@ class App extends Component {
           <nav className="navbar navbar-default">
             <div className="container-fluid">
               <div className="navbar-header">
-                <a class="navbar-brand" href="#">HalloDoggo</a>
+                <a className="navbar-brand" href="#">HalloDoggo</a>
               </div>
                 <ul className="nav navbar-nav navbar-right">
-                  <li className="navList"><Link to="/confirmation"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></Link></li>
+                  <li className="navList"><Link to="/confirmation"><i className="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></Link></li>
                 </ul>
             </div>
           </nav>
           <Switch>
            <Route exact path="/" render={() => <Quiz transferResult={this.transferResult}/>} />
            <Route path="/result" render={() => <Result quizResult={this.state.quizResult}/>}/>
-           <Route path="/confirmation" component={Confirmation} />
+           <Route path="/confirmation" render={() => <Confirmation imageResult={this.state.imageResult}/>}/>
            <Route component={NotFound} />
          </Switch>
       </div>
