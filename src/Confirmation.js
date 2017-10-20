@@ -45,8 +45,8 @@ class Confirmation extends Component {
       src =this.props.imageResult.url
     }
     let price = this.props.imageResult.cost * this.state.quantity;
-    let tax = price * .096;
-    let total = price + tax +10;
+    let tax = Math.round(100*price * .096)/100;
+    let total = Math.round(100*price + tax +10)/100;
     let title = this.props.imageResult.title
     let amount = this.state.quantity
     const{back} = this.state;
