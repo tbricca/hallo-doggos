@@ -6,7 +6,7 @@ class Quiz extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
+      name: 'Zero',
       selectedOptionQ1: 'option1',
       selectedOptionQ2: 'option1',
       selectedOptionQ3: 'option1',

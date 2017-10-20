@@ -50,3 +50,25 @@
 .column1, .column2, .column3{
   height: 450px;
 }
+
+.thumbnail{
+  width: 100px;
+  height: 100px;
+  margin: 20px 0;
+}
+.checkout{
+  height: 140px;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+.fa-times{
+  color: darkgrey;
+}
+.fa-times:hover{
+  color: black;
+}
+.confButton{
+  padding: 10px;
+  margin-left: 10px;
+  width: 100px;
+}

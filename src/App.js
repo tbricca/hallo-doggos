@@ -18,11 +18,13 @@ class App extends Component {
     this.state={
       quizResult: '',
       imageResult: '',
-      name: 'Fido'
+      name: 'Fido',
+      quantity: 1
     }
   this.transferResult = this.transferResult.bind(this)
   this.transferFinalResult = this.transferFinalResult.bind(this)
   this.transferName = this.transferName.bind(this)
+  this.transferQuantity = this.transferQuantity.bind(this)
   }
   transferName(nameDog){
     this.setState({
@@ -37,6 +39,11 @@ class App extends Component {
   transferFinalResult(newResult){
     this.setState({
       imageResult: newResult
+    })
+  }
+  transferQuantity(newQuantity){
+    this.setState({
+      quantity: newQuantity
     })
   }
   render(){
@@ -55,8 +62,8 @@ class App extends Component {
           </nav>
           <Switch>
            <Route exact path="/" render={() => <Quiz transferName={this.transferName} transferResult={this.transferResult}/>} />
-           <Route path="/result" render={() => <Result dogName={this.state.name} transferFinalResult={this.transferFinalResult} quizResult={this.state.quizResult}/>}/>
-           <Route path="/confirmation" render={() => <Confirmation imageResult={this.state.imageResult}/>}/>
+           <Route path="/result" render={() => <Result dogName={this.state.name} transferQuantity={this.transferQuantity} transferFinalResult={this.transferFinalResult} quizResult={this.state.quizResult}/>}/>
+           <Route path="/confirmation" render={() => <Confirmation quantity={this.state.quantity} imageResult={this.state.imageResult}/>}/>
            <Route component={NotFound} />
          </Switch>
       </div>

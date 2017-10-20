@@ -74,7 +74,8 @@ class Result extends Component {
     handleBuy(e){
       e.preventDefault()
       let newResult = this.state.winner;
-      this.props.transferFinalResult(newResult)
+      this.props.transferFinalResult(newResult);
+      this.props.transferQuantity(this.state.quantity);
       this.setState({
         buy:true
       })
