@@ -54,7 +54,7 @@ class App extends Component {
             <div className="container-fluid">
               <div className="navbar-header">
                 <img className="img-responsive logo" src="/logo.png"/>
-                <a className="headerName navbar-brand" href="#">HalloDoggo</a>
+                <Link to="/" className="headerName navbar-brand" href="#">HalloDoggo</Link>
               </div>
                 <ul className="nav navbar-nav navbar-right">
                   <li className="navList"><a href="#">Hello, Jack</a></li>

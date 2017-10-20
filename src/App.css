@@ -22,6 +22,9 @@ p{
   text-decoration: none;
   color: white;
 }
+.headerName:hover{
+  color: white;
+}
 .desc{
   min-height: 100px;
 }
@@ -93,7 +96,7 @@ p{
   max-width: 1000px;
 }
 .fa-times{
-  color: darkgrey;
+  color: red;
 }
 .fa-times:hover{
   color: black;
@@ -102,10 +105,68 @@ p{
   padding: 10px;
   margin-left: 10px;
   width: 100px;
+  background: #8119CA;
+  color: white;
+  border: 1px solid black;
 }
  input {
     min-width: 50px;
 }
 .price{
   padding: 20px;
+}
+.submitQuiz{
+  margin-top: 20px;
+}
+.quiz-group {
+  margin: 8px 0;
+  }
+  .quiz-question-strong {
+  font-weight: 600;
+  padding: 15px 0 10px 0;
+  }
+  .dogName {
+    margin-top: 20px;
+  }
+  .openHeader{
+    padding: 50px;
+  }
+
+.descriptionP{
+  padding: 20px;
+  text-align: center;
+  font-size: 1.4em;
+}
+.imgQ{
+  width: 300px;
+}
+input[type='radio']{
+  margin-right: 5px;
+}
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: none;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #8119CA;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
 }
