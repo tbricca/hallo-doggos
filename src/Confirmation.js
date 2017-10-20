@@ -29,6 +29,7 @@ class Confirmation extends Component {
           <hr/>
           <p>Total: ${total} </p>
         </div>
+        <button> Check out now </button>
       </div>
     );
   }
