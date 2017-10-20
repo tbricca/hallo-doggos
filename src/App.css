@@ -1,28 +1,52 @@
-.App {
+.desc{
+  min-height: 100px;
+}
+
+.size{
+  border: 1px solid lightgrey;
+  padding: 0 10px;
+  margin-left: 10px;
+  width: 40px;
   text-align: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.size:hover{
+  background: lightgrey;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
+.fa-plus, .fa-minus{
+  color: lightgrey
+}
+.btn-number{
+  background: darkgrey;
+}
+
+.quantity{
+  height: 40px;
+  max-width: 200px;
+  padding: 5px 0;
+}
+.button2, .button1{
   padding: 20px;
-  color: white;
+  margin-left: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 150px;
 }
-
-.App-title {
-  font-size: 1.5em;
+.button2{
+  left: 200px;
 }
-
-.App-intro {
-  font-size: large;
+.result p{
+  padding: 0 10px;
 }
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.personDesc{
+  height: 300px;
+}
+.resultDog{
+  padding: 40px;
+}
+.winnerTitle{
+  padding: 20px;
+}
+.column1, .column2, .column3{
+  height: 450px;
 }

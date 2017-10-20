@@ -40,7 +40,9 @@ class Quiz extends Component {
       result: 'xyz'
     })
     let newResult = this.state.result;
-    this.props.transferResult(newResult)
+    this.props.transferResult(newResult);
+    let name= this.state.name;
+    this.props.transferName(name)
   }
 
 
