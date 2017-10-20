@@ -18,7 +18,7 @@ class App extends Component {
     this.state={
       quizResult: '',
       imageResult: '',
-      name: 'Fido',
+      name: 'Zero',
       quantity: 1
     }
   this.transferResult = this.transferResult.bind(this)
@@ -53,10 +53,12 @@ class App extends Component {
           <nav className="navbar navbar-default">
             <div className="container-fluid">
               <div className="navbar-header">
-                <a className="navbar-brand" href="#">HalloDoggo</a>
+                <img className="img-responsive logo" src="/logo.png"/>
+                <a className="headerName navbar-brand" href="#">HalloDoggo</a>
               </div>
                 <ul className="nav navbar-nav navbar-right">
-                  <li className="navList"><Link to="/confirmation"><i className="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></Link></li>
+                  <li className="navList"><a href="#">Hello, Jack</a></li>
+                  <li className="navList"><Link to="/confirmation"><i className="fa fa-shopping-cart fa-2x" aria-hidden="true">  </i></Link></li>
                 </ul>
             </div>
           </nav>

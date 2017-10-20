@@ -48,9 +48,11 @@ class Confirmation extends Component {
           <h1 className="col-md-12"> Checkout </h1>
         </div>
         <div className="row">
-          <div className="col-md-12">
-            <img src="/breadcrumb.png" alt=""/>
+          <div className="col-md-2"></div>
+          <div className="col-md-8">
+            <img className="img-responsive" src="/breadcrumb.png" alt=""/>
           </div>
+          <div className="col-md-2"></div>
         </div>
         <div className="row checkout d-flex align-items-center h100">
           <div className="col-md-1">
@@ -59,7 +61,7 @@ class Confirmation extends Component {
             <img className="thumbnail img-responsive" alt=" " src={src} />
           </div>
           <div className="col-md-2">
-            <p> {title}Blah Blah title here </p>
+            <p> {title} </p>
           </div>
           <div className="col-md-1">
             <div className="input-group input-group-sm quantity">
@@ -82,19 +84,19 @@ class Confirmation extends Component {
           <div className="col-md-1"><i className="fa fa-times fa-2x" aria-hidden="true"></i></div>
           <div className="col-md-2"></div>
       </div>
-        <div className="row">
+        <div className="row price">
           <div className="col-md-7"></div>
           <div className="col-md-2">
             <p> Subtotal: </p>
             <p>Tax: </p>
             <p> Shipping:</p>
-            <p>Total: </p>
+            <h5>Total: </h5>
           </div>
           <div className="col-md-2">
             <p> {price}.00 </p>
             <p>{tax} </p>
             <p> 10.00 </p>
-            <p>{total} </p>
+            <h5>{total} </h5>
           </div>
           </div>
           <div className="row">
