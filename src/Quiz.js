@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter as Route, Redirect } from 'react-router-dom';
 
 class Quiz extends Component {
   constructor(props) {
@@ -7,7 +8,12 @@ class Quiz extends Component {
     this.state = {
       name: '',
       selectedOptionQ1: 'option1',
-      selectedOptionQ2: 'option1'
+      selectedOptionQ2: 'option1',
+      selectedOptionQ3: 'option1',
+      selectedOptionQ4: 'option1',
+      selectedOptionQ5: 'option1',
+      selectedOptionQ6: 'option1',
+      redirect: false
     }
     this.handleOptionChange = this.handleOptionChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,9 +30,16 @@ class Quiz extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.setState({
+      redirect: true
+    })
     console.log('submitted');
   }
   render() {
+    const{redirect} = this.state;
+    if(redirect){
+      return <Redirect to ='/display'/>
+    }
     return (
       <div className="App">
       <form onSubmit={this.handleSubmit}>
@@ -40,7 +53,7 @@ class Quiz extends Component {
           onChange={this.handleOptionChange} />
         </label>
         </div>
-        <div className="Q1"> dog name: {this.state.name}
+        <div className="Q1"> Question 1
           <div className="radio">
             <label>
               <input
@@ -76,7 +89,31 @@ class Quiz extends Component {
             Option 3
             </label>
         </div>
+        <div className="radio">
+          <label>
+            <input type="radio"
+            name="selectedOptionQ1"
+            value="option4"
+            checked={this.state.selectedOptionQ1 === 'option4'}
+            onChange={this.handleOptionChange}
+            />
+            Option 4
+            </label>
+        </div>
+        <div className="radio">
+          <label>
+            <input type="radio"
+            name="selectedOptionQ1"
+            value="option5"
+            checked={this.state.selectedOptionQ1 === 'option5'}
+            onChange={this.handleOptionChange}
+            />
+            Option 5
+            </label>
+        </div>
       </div>
+
+
       <div className="Q2"> Question 2:
         <div className="radio">
           <label>
@@ -113,7 +150,276 @@ class Quiz extends Component {
           Option 3
           </label>
       </div>
+      <div className="radio">
+        <label>
+          <input type="radio"
+          name="selectedOptionQ2"
+          value="option4"
+          checked={this.state.selectedOptionQ2 === 'option4'}
+          onChange={this.handleOptionChange}
+          />
+          Option 4
+          </label>
+      </div>
+      <div className="radio">
+        <label>
+          <input type="radio"
+          name="selectedOptionQ2"
+          value="option5"
+          checked={this.state.selectedOptionQ2 === 'option5'}
+          onChange={this.handleOptionChange}
+          />
+          Option 5
+          </label>
+      </div>
     </div>
+
+
+    <div className="question"> Question 3:
+      <div className="radio">
+        <label>
+          <input
+            type="radio"
+            name="selectedOptionQ3"
+            value="option1"
+            checked={this.state.selectedOptionQ3 === 'option1'}
+            onChange={this.handleOptionChange}
+             />
+            Option 1
+        </label>
+      </div>
+    <div className="radio">
+      <label>
+        <input
+          type="radio"
+          name="selectedOptionQ3"
+          value="option2"
+          checked={this.state.selectedOptionQ3 === 'option2'}
+          onChange={this.handleOptionChange}
+        />
+        Option 2
+        </label>
+    </div>
+    <div className="radio">
+      <label>
+        <input type="radio"
+        name="selectedOptionQ3"
+        value="option3"
+        checked={this.state.selectedOptionQ3 === 'option3'}
+        onChange={this.handleOptionChange}
+        />
+        Option 3
+        </label>
+    </div>
+    <div className="radio">
+      <label>
+        <input type="radio"
+        name="selectedOptionQ3"
+        value="option4"
+        checked={this.state.selectedOptionQ3 === 'option4'}
+        onChange={this.handleOptionChange}
+        />
+        Option 4
+        </label>
+    </div>
+    <div className="radio">
+      <label>
+        <input type="radio"
+        name="selectedOptionQ3"
+        value="option5"
+        checked={this.state.selectedOptionQ3 === 'option5'}
+        onChange={this.handleOptionChange}
+        />
+        Option 5
+        </label>
+    </div>
+  </div>
+
+
+  <div className="question"> Question 4:
+    <div className="radio">
+      <label>
+        <input
+          type="radio"
+          name="selectedOptionQ4"
+          value="option1"
+          checked={this.state.selectedOptionQ4 === 'option1'}
+          onChange={this.handleOptionChange}
+           />
+          Option 1
+      </label>
+    </div>
+  <div className="radio">
+    <label>
+      <input
+        type="radio"
+        name="selectedOptionQ4"
+        value="option2"
+        checked={this.state.selectedOptionQ4 === 'option2'}
+        onChange={this.handleOptionChange}
+      />
+      Option 2
+      </label>
+  </div>
+  <div className="radio">
+    <label>
+      <input type="radio"
+      name="selectedOptionQ4"
+      value="option3"
+      checked={this.state.selectedOptionQ4 === 'option3'}
+      onChange={this.handleOptionChange}
+      />
+      Option 3
+      </label>
+  </div>
+  <div className="radio">
+    <label>
+      <input type="radio"
+      name="selectedOptionQ4"
+      value="option4"
+      checked={this.state.selectedOptionQ4 === 'option4'}
+      onChange={this.handleOptionChange}
+      />
+      Option 4
+      </label>
+  </div>
+  <div className="radio">
+    <label>
+      <input type="radio"
+      name="selectedOptionQ4"
+      value="option5"
+      checked={this.state.selectedOptionQ4 === 'option5'}
+      onChange={this.handleOptionChange}
+      />
+      Option 5
+      </label>
+  </div>
+</div>
+
+
+<div className="question"> Question 5:
+  <div className="radio">
+    <label>
+      <input
+        type="radio"
+        name="selectedOptionQ5"
+        value="option1"
+        checked={this.state.selectedOptionQ5 === 'option1'}
+        onChange={this.handleOptionChange}
+         />
+        Option 1
+    </label>
+  </div>
+<div className="radio">
+  <label>
+    <input
+      type="radio"
+      name="selectedOptionQ5"
+      value="option2"
+      checked={this.state.selectedOptionQ5 === 'option2'}
+      onChange={this.handleOptionChange}
+    />
+    Option 2
+    </label>
+</div>
+<div className="radio">
+  <label>
+    <input type="radio"
+    name="selectedOptionQ5"
+    value="option3"
+    checked={this.state.selectedOptionQ5 === 'option3'}
+    onChange={this.handleOptionChange}
+    />
+    Option 3
+    </label>
+</div>
+<div className="radio">
+  <label>
+    <input type="radio"
+    name="selectedOptionQ5"
+    value="option4"
+    checked={this.state.selectedOptionQ5 === 'option4'}
+    onChange={this.handleOptionChange}
+    />
+    Option 4
+    </label>
+</div>
+<div className="radio">
+  <label>
+    <input type="radio"
+    name="selectedOptionQ5"
+    value="option5"
+    checked={this.state.selectedOptionQ5 === 'option5'}
+    onChange={this.handleOptionChange}
+    />
+    Option 5
+    </label>
+</div>
+</div>
+
+
+<div className="question"> Question 6:
+  <div className="radio">
+    <label>
+      <input
+        type="radio"
+        name="selectedOptionQ6"
+        value="option1"
+        checked={this.state.selectedOptionQ6 === 'option1'}
+        onChange={this.handleOptionChange}
+         />
+        Option 1
+    </label>
+  </div>
+<div className="radio">
+  <label>
+    <input
+      type="radio"
+      name="selectedOptionQ6"
+      value="option2"
+      checked={this.state.selectedOptionQ6 === 'option2'}
+      onChange={this.handleOptionChange}
+    />
+    Option 2
+    </label>
+</div>
+<div className="radio">
+  <label>
+    <input type="radio"
+    name="selectedOptionQ6"
+    value="option3"
+    checked={this.state.selectedOptionQ6 === 'option3'}
+    onChange={this.handleOptionChange}
+    />
+    Option 3
+    </label>
+</div>
+<div className="radio">
+  <label>
+    <input type="radio"
+    name="selectedOptionQ6"
+    value="option4"
+    checked={this.state.selectedOptionQ6 === 'option4'}
+    onChange={this.handleOptionChange}
+    />
+    Option 4
+    </label>
+</div>
+<div className="radio">
+  <label>
+    <input type="radio"
+    name="selectedOptionQ6"
+    value="option5"
+    checked={this.state.selectedOptionQ6 === 'option5'}
+    onChange={this.handleOptionChange}
+    />
+    Option 5
+    </label>
+</div>
+</div>
+
+
+
     <button onClick={(e) => this.handleSubmit(e)}>Submit</button>
     </form>
       </div>
