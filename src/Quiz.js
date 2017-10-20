@@ -31,6 +31,7 @@ class Quiz extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    //result logic here 
     this.setState({
       redirect: true,
       result: 'xyz'
@@ -57,6 +58,7 @@ class Quiz extends Component {
         <input
           type="text"
           name="name"
+          placeholder="Fido"
           value={this.state.name}
           onChange={this.handleOptionChange} />
         </label>
