@@ -13,7 +13,8 @@ class Quiz extends Component {
       selectedOptionQ4: 'option1',
       selectedOptionQ5: 'option1',
       selectedOptionQ6: 'option1',
-      redirect: false
+      redirect: false,
+      result: ''
     }
     this.handleOptionChange = this.handleOptionChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,10 +32,15 @@ class Quiz extends Component {
   handleSubmit(e) {
     e.preventDefault();
     this.setState({
-      redirect: true
+      redirect: true,
+      result: 'xyz'
     })
-    console.log('submitted');
+    let newResult = this.state.result;
+    this.props.transferResult(newResult)
   }
+
+
+
   render() {
     const{redirect} = this.state;
     if(redirect){

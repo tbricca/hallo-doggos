@@ -13,6 +13,18 @@ import{
 }from 'react-router-dom';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      quizResult: ''
+    }
+  this.transferResult = this.transferResult.bind(this)
+  }
+  transferResult(newResult){
+    this.setState({
+      quizResult: newResult
+    })
+  }
   render(){
     return (
       <Router>
@@ -23,8 +35,8 @@ class App extends Component {
 
           </nav>
           <Switch>
-           <Route exact path="/" component={Quiz} />
-           <Route path="/result" component={Result} />
+           <Route exact path="/" render={() => <Quiz transferResult={this.transferResult}/>} />
+           <Route path="/result" render={() => <Result quizResult={this.state.quizResult}/>}/>
            <Route path="/confirmation" component={Confirmation} />
            <Route component={NotFound} />
          </Switch>
