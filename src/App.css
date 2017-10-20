@@ -1,3 +1,20 @@
+.navbar{
+  background: lightgrey;
+}
+.navbar-right a{
+  color: white;
+  text-decoration: none;
+}
+
+.logo{
+  height: 50px;
+  padding-right:15px;
+}
+.headerName{
+  font-size: 2em;
+  text-decoration: none;
+  color: white;
+}
 .desc{
   min-height: 100px;
 }
@@ -61,6 +78,9 @@
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
 }
+.checkoutContainer{
+  max-width: 1000px;
+}
 .fa-times{
   color: darkgrey;
 }
@@ -71,4 +91,10 @@
   padding: 10px;
   margin-left: 10px;
   width: 100px;
+}
+ input {
+    min-width: 50px;
+}
+.price{
+  padding: 20px;
 }
