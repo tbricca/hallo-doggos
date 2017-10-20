@@ -34,7 +34,7 @@ class Quiz extends Component {
     //result logic here
 
 
-    
+
     this.setState({
       redirect: true,
       result: 'xyz'
@@ -48,7 +48,7 @@ class Quiz extends Component {
   render() {
     const{redirect} = this.state;
     if(redirect){
-      return <Redirect to ='/display'/>
+      return <Redirect to ='/result'/>
     }
     return (
       <div className="App">
