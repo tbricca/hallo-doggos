@@ -31,7 +31,10 @@ class Quiz extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    //result logic here 
+    //result logic here
+
+
+    
     this.setState({
       redirect: true,
       result: 'xyz'
