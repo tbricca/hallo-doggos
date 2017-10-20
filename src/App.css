@@ -1,11 +1,18 @@
 .navbar{
-  background: lightgrey;
+  background: black;
 }
 .navbar-right a{
   color: white;
   text-decoration: none;
 }
 
+h1, h2, h3, h4, h5{
+  font-family: "Century Gothic", sans-serif;
+  font-weight: bold;
+}
+p{
+  font-family: Helvetica, sans-serif;
+}
 .logo{
   height: 50px;
   padding-right:15px;
@@ -20,34 +27,38 @@
 }
 
 .size{
-  border: 1px solid lightgrey;
+  border: 1px solid black;
   padding: 0 10px;
   margin-left: 10px;
   width: 40px;
   text-align: center;
 }
 .size:hover{
-  background: lightgrey;
+  background: darkgrey;
 }
 
 .fa-plus, .fa-minus{
-  color: lightgrey
+  color: white;
 }
 .btn-number{
-  background: darkgrey;
+  background: black;
 }
 
 .quantity{
   height: 40px;
   max-width: 200px;
   padding: 5px 0;
+
 }
 .button2, .button1{
-  padding: 20px;
+  padding: 10px;
   margin-left: 10px;
   position: absolute;
   bottom: 0;
   width: 150px;
+  background: #8119CA;
+  color: white;
+  border: 1px solid black;
 }
 .button2{
   left: 200px;
@@ -59,13 +70,13 @@
   height: 300px;
 }
 .resultDog{
-  padding: 40px;
+  padding: 20px;
 }
 .winnerTitle{
   padding: 20px;
 }
 .column1, .column2, .column3{
-  height: 450px;
+  height: 500px;
 }
 
 .thumbnail{
