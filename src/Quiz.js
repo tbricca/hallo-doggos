@@ -439,7 +439,7 @@ class Quiz extends Component {
             <label>
               <input
                 type="radio"
-                name="selectedOptionQ1"
+                name="selectedOptionQ6"
                 value="option2"
                 checked={this.state.selectedOptionQ6 === 'option2'}
                 onChange={this.handleOptionChange}
@@ -450,7 +450,7 @@ class Quiz extends Component {
           <div className="radio">
             <label>
               <input type="radio"
-              name="selectedOptionQ1"
+              name="selectedOptionQ6"
               value="option3"
               checked={this.state.selectedOptionQ6 === 'option3'}
               onChange={this.handleOptionChange}
@@ -461,7 +461,7 @@ class Quiz extends Component {
           <div className="radio">
             <label>
               <input type="radio"
-              name="selectedOptionQ1"
+              name="selectedOptionQ6"
               value="option4"
               checked={this.state.selectedOptionQ6 === 'option4'}
               onChange={this.handleOptionChange}
@@ -472,7 +472,7 @@ class Quiz extends Component {
           <div className="radio">
             <label>
               <input type="radio"
-              name="selectedOptionQ1"
+              name="selectedOptionQ6"
               value="option5"
               checked={this.state.selectedOptionQ6 === 'option5'}
               onChange={this.handleOptionChange}
