@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Quiz from './Quiz';
 import Result from './Result';
-import Checkout from './Checkout';
-import Billing from './Billing';
 import Confirmation from './Confirmation';
 import NotFound from './NotFound';
 
@@ -15,25 +13,65 @@ import{
 }from 'react-router-dom';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      quizResult: '',
+      imageResult: '',
+      name: 'Zero',
+      quantity: 1
+    }
+  this.transferResult = this.transferResult.bind(this)
+  this.transferFinalResult = this.transferFinalResult.bind(this)
+  this.transferName = this.transferName.bind(this)
+  this.transferQuantity = this.transferQuantity.bind(this)
+  }
+  transferName(nameDog){
+    this.setState({
+      name: nameDog
+    })
+  }
+  transferResult(newResult){
+    this.setState({
+      quizResult: newResult
+    })
+  }
+  transferFinalResult(newResult){
+    this.setState({
+      imageResult: newResult
+    })
+  }
+  transferQuantity(newQuantity){
+    this.setState({
+      quantity: newQuantity
+    })
+  }
   render(){
     return (
-      <Router>
+    <Router>
       <div className="App">
-          <nav>
-            <Link to="/result">Result</Link>
-            <Link to="/checkout">Checkout (shopping cart icon)</Link>
-
+          <nav className="navbar navbar-default">
+            <div className="container-fluid">
+              <div className="navbar-header">
+                <img className="img-responsive logo" src="/logo.png"/>
+                <Link to="/" className="headerName navbar-brand" href="#">HalloDoggo</Link>
+              </div>
+                <ul className="nav navbar-nav navbar-right">
+                  <li className="navList"><a href="#">Hello, Jack</a></li>
+                  <li className="navList"><Link to="/confirmation"><i className="fa fa-shopping-cart fa-2x" aria-hidden="true">  </i></Link></li>
+                </ul>
+            </div>
           </nav>
           <Switch>
-           <Route exact path="/" component={Quiz} />
-           <Route path="/result" component={Result} />
-           <Route path="/checkout" component={Checkout} />
-           <Route path="/checkout/billing" component={Billing} />
-           <Route path="/confirmation" component={Confirmation} />
+           <Route exact path="/" render={() => <Quiz transferName={this.transferName} transferResult={this.transferResult}/>} />
+           <Route path="/result" render={() => <Result dogName={this.state.name} transferQuantity={this.transferQuantity} transferFinalResult={this.transferFinalResult} quizResult={this.state.quizResult}/>}/>
+           <Route path="/confirmation" render={() => <Confirmation quantity={this.state.quantity} imageResult={this.state.imageResult}/>}/>
            <Route component={NotFound} />
          </Switch>
       </div>
-      </Router>
+    </Router>
     );
   }
 }
+
+export default App;
